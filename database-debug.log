@@ -1,0 +1,14 @@
+16:59:07.736 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:59:07.904 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+16:59:09.492 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - lollywest-abfa6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 107ms, init: 0ms
+16:59:09.543 [NamespaceSystem-blocking-namespace-operation-dispatcher-8] INFO com.firebase.core.namespace.StateManager - Namespace lollywest-abfa6-default-rtdb status Active to Active
+17:02:28.643 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace lollywest-abfa6, but the emulator is configured for lollywest-abfa6-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+17:02:28.760 [NamespaceSystem-akka.actor.default-dispatcher-11] INFO com.firebase.core.namespace.NamespaceActor - lollywest-abfa6 successfully activated FBKV (SurveyIdle(0)) wait: 15ms, init: 0ms
+17:03:27.883 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+17:03:27.971 [NamespaceSystem-akka.actor.default-dispatcher-11] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: lollywest-abfa6-default-rtdb, lollywest-abfa6
+17:03:27.993 [NamespaceSystem-akka.actor.default-dispatcher-19] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for lollywest-abfa6
+17:03:27.993 [NamespaceSystem-akka.actor.default-dispatcher-14] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for lollywest-abfa6-default-rtdb
+17:03:28.009 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.

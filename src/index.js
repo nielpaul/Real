@@ -44,20 +44,20 @@ document.getElementById('waitlist-form').addEventListener('submit', saveUser);
 
 function saveUser(name, email, phoneNumber, isPodcaster) {
   e.preventDefault();
-  var newUser = newUser.push();
-  newUser.set(ref(db)), {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    phoneNumber: document.getElementById("phoneNumber").value,
-    isPodcaster: document.getElementById("isPodcaster").value,
-  };
-  alert("Welcome to Lollywest")
 
   /* Throw error if user does not fill out all of the fields */
   if (!name || !email || !phoneNumber) {
     res.status(422).json({ error: "Please complete all of the necessary fields." })
   }
 
+  var newUser = newUser.push();
+  newUser.set(ref(db, 'users/' +userID), {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phoneNumber: document.getElementById("phoneNumber").value,
+    isPodcaster: document.getElementById("isPodcaster").value,
+  });
+  alert("Welcome to Lollywest")
   document.getElementById('waitlist-form').reset();
 }
 
