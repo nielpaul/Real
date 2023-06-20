@@ -40,7 +40,8 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getDatabase(firebaseApp);
 
 
-document.getElementById('waitlist-form').addEventListener('submit', saveUser);
+
+this.button.on("submit", saveUser);
 
 function saveUser(name, email, phoneNumber, isPodcaster) {
   e.preventDefault();
