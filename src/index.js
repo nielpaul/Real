@@ -6,7 +6,7 @@ import Podcasters from './Podcasters';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, res, child, push, update } from "firebase/database";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -28,39 +28,33 @@ const firebaseConfig = {
   measurementId: "G-LZXP6QF51X"
 };
 
-const env = dotenv.config()
+const firebaseApp = initializeApp(firebaseConfig);
+const firestore = getFirestore(firebaseApp);
+const env = dotenv.config();
 
 /* CONFIGURATIONS */
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getDatabase(firebaseApp);
+submitData.addEventListener('click', (e) => {
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phoneNumber = document.getElementById("phoneNumber").value;
+  var isPodcaster = document.getElementById("isPodcaster").value;
+
+    addDoc(collection(firestore, "users"), {
+      name: name,
+      email: email,
+      phoneNumber: phoneNumber,
+      isPodcaster: isPodcaster
+    });
+
+  alert('Added to the waitlist!');
 
 
-
-this.button.on("submit", saveUser);
-
-function saveUser(name, email, phoneNumber, isPodcaster) {
-  e.preventDefault();
-
-  /* Throw error if user does not fill out all of the fields */
-  if (!name || !email || !phoneNumber) {
-    res.status(422).json({ error: "Please complete all of the necessary fields." })
-  }
-
-  var newUser = newUser.push();
-  newUser.set(ref(db, 'users/' +userID), {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    phoneNumber: document.getElementById("phoneNumber").value,
-    isPodcaster: document.getElementById("isPodcaster").value,
-  });
-  alert("Welcome to Lollywest")
-  document.getElementById('waitlist-form').reset();
-}
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

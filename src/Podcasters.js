@@ -3,6 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 
 
+
+
 function Podcasters() {
 
    const [name, setName] = useState("");
@@ -39,6 +41,7 @@ function Podcasters() {
 
    return (
       <>
+      
          <main className="page-wrapper">
             <header className="navbar fixed-top bg-light">
                <div className="container"><a className="navbar-brand" href="/">
